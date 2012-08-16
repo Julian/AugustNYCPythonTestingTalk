@@ -1,0 +1,186 @@
+
+<html>
+  <head>
+    <link href="css/reset.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="css/favicon.png" />
+    <link rel="apple-touch-icon" href="css/apple-touch-icon.png" />
+    <!-- Code Prettifier: -->
+<link href="css/prettify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/prettify.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,300,400,800' rel='stylesheet' type='text/css'>    
+
+
+  </head>
+
+  <body onload="prettyPrint()">
+  <div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+    <div id="impress">
+    <div class='step' >
+    
+<h1>Testing Tools</h1>
+
+<h2>Julian Berman</h2>
+</div>
+      <div class='step' >
+    
+<h1>Testing</h1>
+
+<blockquote>
+<p>What</p>
+
+<p>How</p>
+
+<p><strong>Why</strong></p>
+</blockquote>
+</div>
+      <div class='step' >
+    
+<h1>Discovery</h1>
+<pre><code class='prettyprint '>loader = unittest.TestLoader()
+suite = loader.loadTestsFromTestCase(TestSequenceFunctions)
+unittest.TextTestRunner(verbosity=2).run(suite)
+</code></pre></div>
+      <div class='step' >
+    
+<h1>Test Running</h1>
+
+<ul>
+<li><code class='inline prettyprint'>py.test</code></li>
+<li><code class='inline prettyprint'>trial</code></li>
+<li><code class='inline prettyprint'>nosetests</code></li>
+<li><code class='inline prettyprint'>python -m unittest discover</code></li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>Features</h1>
+
+<ul>
+<li>Make explicitly selecting tests easy</li>
+</ul>
+
+<blockquote>
+<p><code class='inline prettyprint'>test foo.bar.TestCase.test_method</code></p>
+</blockquote>
+</div>
+      <div class='step' >
+    
+<h1>Features</h1>
+
+<ul>
+<li>Fast</li>
+<li>Customizable output</li>
+<li>Test timing</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>The Opinionated Part</h1>
+</div>
+      <div class='step' >
+    
+<h2>tox</h2>
+
+<p><a href="http://tox.testrun.org">http://tox.testrun.org</a></p>
+</div>
+      <div class='step' >
+    
+<h2>coverage.py</h2>
+
+<ul>
+<li>Run tests</li>
+<li>See what ran</li>
+<li>Fix your code</li>
+<li>Write more tests</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>coverage.py</h2>
+<pre><code class='prettyprint '>class CalculatorTest(unittest.TestCase):
+    def setUp(self):
+      self.calc = Calculator()
+
+
+      def test_add(self):
+        result = self.calc.add(5, 3)
+        self.assertEqual(result, 8)
+
+
+    def test_subtract(self):
+        result = self.calc.subtract(10, 4)
+        self.assertEqual(result, 6)
+
+
+    def multiply_test(self):
+        result = self.calc.multiply(9, 2)
+        self.assertEqual(result, 18)
+
+
+    def test_divide(self):
+        result = self.calc.divide(6, 3)
+        self.assertEqual(result, 2)
+
+        with self.assertRaises(ZeroDivisionError):
+            self.calc.divide(10, 0)
+            self.calc.divide(0, 0)
+</code></pre>
+<p><a href="../htmlcov/index.html">Coverage</a></p>
+</div>
+      <div class='step' >
+    
+<h2>mock</h2>
+<pre><code class='prettyprint '>import mock
+import foundausefortwitter as fauft
+
+def test_twitter(self):
+    with mock.patch("fauft.urlopen", return_value=my_html) as m:
+        messages = self.twitter_scraper.fetch(user="@NYCPython")
+        self.assertTrue(m.called)
+        self.assertEqual(messages, ["Hello", "World"])
+</code></pre></div>
+      <div class='step' >
+    
+<h2>Debuggers</h2>
+
+<ul>
+<li><code class='inline prettyprint'>pdb</code></li>
+<li><code class='inline prettyprint'>pdb++</code></li>
+<li><code class='inline prettyprint'>pudb</code></li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h2>pdb++</h2>
+
+<p><img src="../pdbpp.png" alt="pdb++"></p>
+</div>
+      <div class='step' >
+    
+<h2><code class='inline prettyprint'>Your Editor Here</code></h2>
+
+<ul>
+<li>tslime</li>
+<li>AsyncMakeGreen</li>
+<li>ViMux</li>
+</ul>
+</div>
+      <div class='step' >
+    
+<blockquote>
+<p>Questions</p>
+</blockquote>
+
+      </div>
+    <script src="js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>
+    
